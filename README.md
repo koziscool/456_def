@@ -29,6 +29,27 @@ submitted by a form.
 }
 ```
 
+John Kosmicke
+
+
+<form method='post' action='/users/' accept-charset="UTF-8">
+  <input type='hidden' name='authenticity_token' value='some long number crap'>
+  <label class='string required' for='username'>Username:</label>
+  <input type='text' name='user[username]' id='username' placeholder='Username'>
+  
+  <label class='string required' for='email'>Email:</label>
+  <input type='text' name='user[email]' id='email' placeholder='foo@example.com'>
+
+  <label class='string required' for='password'>Password:</label>
+  <input type='password' id='password' name='user[password]'>
+
+  <label class='string required' for='confirm_password'>Confirm Password:</label>
+  <input type='password' id='confirm_password' name='user[confirm_password]'>
+
+  <input type='submit' name='submit' value='Create User'>
+</form>
+
+
 Given the hash above, complete the following:
 
 - open up this README file in your text editor.
