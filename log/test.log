@@ -4,3 +4,608 @@
   [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
   [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "employee_team" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "employee_id" integer, "team_id" integer) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "employees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "progress_reports" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160208170432')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160208164220')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160208164920')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160208164939')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m  DELETE FROM "employee_team";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'employee_team';
+  [1m[36m (0.8ms)[0m  [1mDELETE FROM "employees";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'employees';[0m
+  [1m[35m (0.7ms)[0m  DELETE FROM "progress_reports";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'progress_reports';
+  [1m[36m (0.8ms)[0m  [1mDELETE FROM "teams";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'teams';[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Wade"], ["last_name", "Hoeger"], ["email", "Makenna_Halvorson_1@anderson.biz"], ["created_at", "2013-02-26 10:05:24.981949"], ["updated_at", "2014-07-07 02:41:02.982271"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Toni"], ["last_name", "Blick"], ["email", "Audie_Kihn_2@ondrickaconn.biz"], ["created_at", "2012-03-15 18:53:33.005778"], ["updated_at", "2014-11-03 02:36:51.005927"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Margarete"], ["last_name", "Senger"], ["email", "Coralie_Carroll_3@steuber.net"], ["created_at", "2014-12-18 13:53:24.017282"], ["updated_at", "2011-12-21 11:33:06.017453"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "progress_reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["body", "The AI array is down, hack the primary hard drive so we can hack the XSS panel!"], ["created_at", "2016-02-09 00:28:55.026415"], ["updated_at", "2016-02-09 00:28:55.026415"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "progress_reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)  [["body", "Use the cross-platform HTTP program, then you can synthesize the optical firewall!"], ["created_at", "2016-02-09 00:28:55.032158"], ["updated_at", "2016-02-09 00:28:55.032158"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "1080p monitor parsing pigs 4"], ["created_at", "2011-09-29 16:55:02.038866"], ["updated_at", "2013-04-27 22:09:32.039031"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "multi-byte alarm overriding exorcists 5"], ["created_at", "2011-02-09 10:35:22.042151"], ["updated_at", "2013-11-05 12:46:06.042274"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "neural microchip generating cats 6"], ["created_at", "2009-05-01 20:00:35.045048"], ["updated_at", "2015-04-26 00:16:52.045169"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.7ms)[0m  DELETE FROM "employee_team";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'employee_team';
+  [1m[36m (0.8ms)[0m  [1mDELETE FROM "employees";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'employees';[0m
+  [1m[35m (0.8ms)[0m  DELETE FROM "progress_reports";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'progress_reports';
+  [1m[36m (0.7ms)[0m  [1mDELETE FROM "teams";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'teams';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Laverna"], ["last_name", "Becker"], ["email", "Alivia_Spinka_1@purdyharvey.biz"], ["created_at", "2015-01-29 20:43:05.431896"], ["updated_at", "2010-11-09 02:02:28.432086"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Orlando"], ["last_name", "Altenwerth"], ["email", "Narciso_Powlowski_2@ward.org"], ["created_at", "2013-04-09 07:21:21.447792"], ["updated_at", "2014-11-18 23:18:01.447949"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Dewayne"], ["last_name", "Williamson"], ["email", "Aditya_O'Hara_3@gleasontremblay.io"], ["created_at", "2013-07-17 22:03:09.459888"], ["updated_at", "2012-01-20 12:50:29.460081"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "progress_reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["body", "backing up the system won't do anything, we need to copy the solid state JBOD bandwidth!"], ["created_at", "2016-02-09 00:29:51.467526"], ["updated_at", "2016-02-09 00:29:51.467526"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "progress_reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)  [["body", "Try to copy the JBOD firewall, maybe it will program the solid state driver!"], ["created_at", "2016-02-09 00:29:51.473054"], ["updated_at", "2016-02-09 00:29:51.473054"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "solid state hard drive generating werewolves 4"], ["created_at", "2014-02-22 06:53:06.478540"], ["updated_at", "2011-10-25 16:31:53.478699"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "digital hard drive compressing werewolves 5"], ["created_at", "2015-03-19 19:35:41.481753"], ["updated_at", "2016-01-24 13:16:20.481903"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "auxiliary capacitor copying sorcerors 6"], ["created_at", "2007-11-29 15:46:49.485689"], ["updated_at", "2015-11-19 08:45:57.485863"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.8ms)[0m  DELETE FROM "employee_team";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'employee_team';
+  [1m[36m (0.9ms)[0m  [1mDELETE FROM "employees";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'employees';[0m
+  [1m[35m (0.9ms)[0m  DELETE FROM "progress_reports";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'progress_reports';
+  [1m[36m (0.9ms)[0m  [1mDELETE FROM "teams";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'teams';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Rey"], ["last_name", "Kuhlman"], ["email", "Bonita_Herman_1@wilkinson.com"], ["created_at", "2012-11-25 08:52:41.889812"], ["updated_at", "2015-03-20 20:34:40.889989"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Carmine"], ["last_name", "Little"], ["email", "Hailee_Greenholt_2@stoltenberg.co"], ["created_at", "2012-11-09 13:10:50.914957"], ["updated_at", "2012-10-19 08:28:00.915123"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Heidi"], ["last_name", "Stiedemann"], ["email", "Lonzo_Langworth_3@schroeder.net"], ["created_at", "2012-06-11 22:19:21.920006"], ["updated_at", "2015-12-06 07:01:21.920199"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "progress_reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["body", "We need to copy the online FTP system!"], ["created_at", "2016-02-09 00:37:33.929748"], ["updated_at", "2016-02-09 00:37:33.929748"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "progress_reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)  [["body", "backing up the bus won't do anything, we need to bypass the virtual SSL system!"], ["created_at", "2016-02-09 00:37:33.935660"], ["updated_at", "2016-02-09 00:37:33.935660"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "redundant interface quantifying warlocks 4"], ["created_at", "2015-10-19 06:04:53.942623"], ["updated_at", "2014-10-16 08:12:14.942817"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "open-source card bypassing dogs 5"], ["created_at", "2015-09-04 23:06:22.946164"], ["updated_at", "2014-10-15 03:32:09.946314"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "neural transmitter parsing birds 6"], ["created_at", "2009-02-14 09:50:38.950001"], ["updated_at", "2011-10-24 11:12:15.950137"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "employee_team" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "employee_id" integer, "team_id" integer) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "employees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "progress_reports" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160208170432')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160208164220')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160208164920')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160208164939')
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "employee_team" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "employee_id" integer, "team_id" integer) [0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "employees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "progress_reports" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160208170432')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160208164220')
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160208164920')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160208164939')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "employee_teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "employee_id" integer, "team_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "employees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "team_id" integer, "progress_report_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "progress_reports" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "owner_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160209003803')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160208164220')
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160208164920')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160208164939')
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.7ms)[0m  [1mDELETE FROM "employee_teams";[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'employee_teams';[0m
+  [1m[35m (0.9ms)[0m  DELETE FROM "employees";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'employees';
+  [1m[36m (0.8ms)[0m  [1mDELETE FROM "progress_reports";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'progress_reports';[0m
+  [1m[35m (0.8ms)[0m  DELETE FROM "teams";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'teams';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "General"], ["last_name", "Langosh"], ["email", "Lenore_Koelpin_1@powlowskiryan.co"], ["created_at", "2014-09-07 06:39:39.430650"], ["updated_at", "2013-11-30 02:40:40.430882"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Horace"], ["last_name", "Hills"], ["email", "Arlie_Hessel_2@wuckert.net"], ["created_at", "2015-01-28 16:02:31.451225"], ["updated_at", "2014-07-16 14:41:14.451425"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Amari"], ["last_name", "Kuvalis"], ["email", "Branson_Schmeler_3@whiteconsidine.com"], ["created_at", "2014-05-05 08:07:41.464686"], ["updated_at", "2015-03-01 00:51:16.464843"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "progress_reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)  [["body", "Try to hack the AI firewall, maybe it will parse the neural alarm!"], ["created_at", "2016-02-09 00:43:07.472330"], ["updated_at", "2016-02-09 00:43:07.472330"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "progress_reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["body", "Use the optical USB system, then you can bypass the mobile hard drive!"], ["created_at", "2016-02-09 00:43:07.476934"], ["updated_at", "2016-02-09 00:43:07.476934"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "open-source feed navigating sons 4"], ["created_at", "2013-11-04 21:06:53.482164"], ["updated_at", "2015-01-16 10:49:17.482346"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "optical application transmitting people 5"], ["created_at", "2014-06-02 14:16:32.487745"], ["updated_at", "2011-11-23 17:24:53.487881"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "auxiliary protocol parsing cats 6"], ["created_at", "2014-11-22 17:40:19.491040"], ["updated_at", "2013-08-12 09:58:44.491198"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.8ms)[0m  DELETE FROM "employee_teams";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'employee_teams';
+  [1m[36m (0.9ms)[0m  [1mDELETE FROM "employees";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'employees';[0m
+  [1m[35m (0.8ms)[0m  DELETE FROM "progress_reports";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'progress_reports';
+  [1m[36m (0.7ms)[0m  [1mDELETE FROM "teams";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'teams';[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Daija"], ["last_name", "Kreiger"], ["email", "Evie_Roberts_1@waelchi.name"], ["created_at", "2015-04-26 15:41:25.309875"], ["updated_at", "2013-09-19 21:51:58.310074"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Micah"], ["last_name", "Gulgowski"], ["email", "Jovany_Schinner_2@breitenbergwelch.org"], ["created_at", "2011-07-13 07:53:03.329340"], ["updated_at", "2015-11-04 07:49:26.329519"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Luciano"], ["last_name", "Cole"], ["email", "Alysa_Cronin_3@kubabbott.name"], ["created_at", "2011-03-11 04:57:04.334511"], ["updated_at", "2015-11-27 02:44:00.334740"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "progress_reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["body", "If we reboot the panel, we can get to the SAS panel through the mobile HTTP capacitor!"], ["created_at", "2016-02-09 00:47:29.343480"], ["updated_at", "2016-02-09 00:47:29.343480"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "progress_reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)  [["body", "navigating the protocol won't do anything, we need to copy the wireless RAM pixel!"], ["created_at", "2016-02-09 00:47:29.348698"], ["updated_at", "2016-02-09 00:47:29.348698"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "haptic bus hacking foes 4"], ["created_at", "2014-11-04 03:53:16.353984"], ["updated_at", "2011-12-23 18:48:16.354170"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "digital bandwidth bypassing people 5"], ["created_at", "2012-08-27 09:00:01.357454"], ["updated_at", "2014-09-03 18:56:55.357631"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "digital interface calculating nemesis 6"], ["created_at", "2010-09-03 13:23:45.371522"], ["updated_at", "2015-04-06 08:30:28.371842"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.6ms)[0m  DELETE FROM "employee_teams";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'employee_teams';
+  [1m[36m (0.7ms)[0m  [1mDELETE FROM "employees";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'employees';[0m
+  [1m[35m (0.6ms)[0m  DELETE FROM "progress_reports";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'progress_reports';
+  [1m[36m (0.6ms)[0m  [1mDELETE FROM "teams";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'teams';[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Ocie"], ["last_name", "Klein"], ["email", "Pat_Johnson_1@larson.name"], ["created_at", "2014-12-10 00:24:20.272754"], ["updated_at", "2008-01-11 15:30:38.272926"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Noemie"], ["last_name", "Kshlerin"], ["email", "Lily_O'Keefe_2@kuhic.biz"], ["created_at", "2014-09-07 17:18:20.291524"], ["updated_at", "2012-02-04 14:08:23.291696"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Kyle"], ["last_name", "Wyman"], ["email", "Ashley_Moore_3@harveymoriette.name"], ["created_at", "2015-08-23 10:16:38.296428"], ["updated_at", "2011-12-03 20:01:18.296584"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "progress_reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["body", "Use the bluetooth PCI matrix, then you can quantify the cross-platform driver!"], ["created_at", "2016-02-09 00:49:09.304701"], ["updated_at", "2016-02-09 00:49:09.304701"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "progress_reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)  [["body", "calculating the array won't do anything, we need to quantify the mobile AI alarm!"], ["created_at", "2016-02-09 00:49:09.309976"], ["updated_at", "2016-02-09 00:49:09.309976"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "primary feed generating lycanthropes 4"], ["created_at", "2009-11-09 21:42:33.314900"], ["updated_at", "2010-07-30 07:37:33.315059"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "online firewall hacking crows 5"], ["created_at", "2013-12-14 08:52:15.318785"], ["updated_at", "2015-09-28 03:15:34.318968"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "neural bus parsing lions 6"], ["created_at", "2013-03-07 03:01:28.331007"], ["updated_at", "2016-02-05 23:38:14.331218"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.8ms)[0m  DELETE FROM "employee_teams";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'employee_teams';
+  [1m[36m (1.1ms)[0m  [1mDELETE FROM "employees";[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'employees';[0m
+  [1m[35m (1.0ms)[0m  DELETE FROM "progress_reports";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'progress_reports';
+  [1m[36m (1.0ms)[0m  [1mDELETE FROM "teams";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'teams';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Shanon"], ["last_name", "Ullrich"], ["email", "Kiley_Pollich_1@mayert.io"], ["created_at", "2014-10-27 02:20:08.188376"], ["updated_at", "2014-07-31 20:24:10.188542"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Obie"], ["last_name", "Robel"], ["email", "Rahsaan_Bartoletti_2@prohaskasatterfield.name"], ["created_at", "2015-07-17 12:34:03.209924"], ["updated_at", "2014-12-09 10:37:46.210080"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "German"], ["last_name", "Towne"], ["email", "Lawson_Wisoky_3@batzkilback.biz"], ["created_at", "2015-06-03 15:54:54.214805"], ["updated_at", "2012-10-30 20:17:16.214975"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "progress_reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["body", "The SCSI panel is down, copy the mobile hard drive so we can navigate the ADP circuit!"], ["created_at", "2016-02-09 00:50:01.223093"], ["updated_at", "2016-02-09 00:50:01.223093"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "progress_reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)  [["body", "Try to input the JSON program, maybe it will override the bluetooth bandwidth!"], ["created_at", "2016-02-09 00:50:01.228725"], ["updated_at", "2016-02-09 00:50:01.228725"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "virtual protocol programming griffins 4"], ["created_at", "2014-09-14 11:14:41.234861"], ["updated_at", "2016-01-17 09:58:03.234996"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "auxiliary bandwidth generating goats 5"], ["created_at", "2016-01-14 16:00:39.238215"], ["updated_at", "2012-03-22 10:53:52.238350"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "1080p bandwidth copying kangaroos 6"], ["created_at", "2012-08-01 16:27:35.249929"], ["updated_at", "2015-12-04 05:39:02.250067"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.6ms)[0m  DELETE FROM "employee_teams";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'employee_teams';
+  [1m[36m (0.7ms)[0m  [1mDELETE FROM "employees";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'employees';[0m
+  [1m[35m (0.7ms)[0m  DELETE FROM "progress_reports";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'progress_reports';
+  [1m[36m (0.7ms)[0m  [1mDELETE FROM "teams";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'teams';[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Cecelia"], ["last_name", "Rath"], ["email", "Edmond_Hilll_1@schowalter.com"], ["created_at", "2014-05-28 20:31:02.220805"], ["updated_at", "2015-12-15 04:05:47.221099"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Rosalia"], ["last_name", "Cormier"], ["email", "Raymundo_Dibbert_2@wyman.com"], ["created_at", "2013-12-18 14:05:07.244330"], ["updated_at", "2013-05-29 13:00:25.244517"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "employees" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["first_name", "Lenny"], ["last_name", "Leuschke"], ["email", "Carlos_Kessler_3@bahringer.net"], ["created_at", "2014-03-10 20:18:29.249121"], ["updated_at", "2012-08-04 11:14:10.249303"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "progress_reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["body", "I'll connect the primary HDD port, that should transmitter the THX monitor!"], ["created_at", "2016-02-09 00:51:56.256626"], ["updated_at", "2016-02-09 00:51:56.256626"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "progress_reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)  [["body", "I'll calculate the online CSS pixel, that should transmitter the TCP port!"], ["created_at", "2016-02-09 00:51:56.262030"], ["updated_at", "2016-02-09 00:51:56.262030"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "bluetooth microchip backing up dogs 4"], ["created_at", "2014-07-28 19:38:55.268131"], ["updated_at", "2013-01-21 09:35:25.268396"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "haptic microchip hacking sheep 5"], ["created_at", "2009-02-22 09:54:53.272252"], ["updated_at", "2016-02-07 21:42:49.272448"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "mobile sensor copying elephants 6"], ["created_at", "2015-12-27 19:22:55.277529"], ["updated_at", "2014-12-20 15:20:36.277686"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m

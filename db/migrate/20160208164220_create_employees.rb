@@ -5,7 +5,7 @@ class CreateEmployees < ActiveRecord::Migration
       t.string    :last_name
       t.string    :email
       t.integer   :team_id
-      t_integer   :progress_report_id
+      t.integer   :progress_report_id
       t.timestamps null: false
     end
   end
